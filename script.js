@@ -25,7 +25,32 @@ button.addEventListener('click', () => {
         alert('Zadej prosím úkol a čas!');
     }
 });
+//ulozit data
+function saveTasks() {
+    const tasks = [];
+    document.querySelectorAll('li').forEach(task => {
+        const taskText = task.innerText;
+        const taskDeadline = task.getAttribute('data-deadline');
+        const taskChecked = task.querySelector('input').checked;
+        tasks.push({ text: taskText, deadline: taskDeadline, checked: taskChecked });
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
+// nacist data
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.forEach(task => {
+        const listItem = document.createElement('li');
+        listItem.setAttribute('data-deadline', task.deadline);
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = task.checked;
+        listItem.innerText = task.text;
+        listItem.appendChild(checkbox);
+        list.appendChild(listItem);
+    });
+}
 //interval pro kontrolu ukolu
 setInterval(() => {
     const tasks = document.querySelectorAll('li');
