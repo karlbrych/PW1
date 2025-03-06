@@ -67,3 +67,22 @@
     background-color: #003d80;
     transform: scale(0.98);
 }
+li {
+  
+    padding: 10px 15px;        
+    margin: 10px 0;             
+    border-radius: 8px;         
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;  
+    font-weight: bold;
+    font-family:'Roboto', sans-serif;
+    
+  }
+  li:hover {
+    
+    transform: translateY(-7.5px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  li::before {  
+    margin-right: 10px; 
+  }
