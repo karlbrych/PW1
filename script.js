@@ -3,7 +3,7 @@ const button = document.getElementById('addTask');
 const input = document.getElementById('taskInput');
 const deadline = document.getElementById('taskTime');
 const list = document.getElementById('taskList');
-
+document.addEventListener('DOMContentLoaded', loadTasks);
 //event listener
 button.addEventListener('click', () => {
     console.log("task pridan!");
