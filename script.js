@@ -18,6 +18,7 @@ button.addEventListener('click', () => {
         listItem.innerText = task + ' - ' + formattedDate;
         listItem.appendChild(checkbox);
         list.appendChild(listItem);
+        saveTasks();
         input.value = '';
         deadline.value = '';
     }
